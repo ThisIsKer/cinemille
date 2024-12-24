@@ -14,4 +14,6 @@ public interface ProgrammazioneRepository extends CrudRepository<Programmazione,
 
     @Query("select p.film from Programmazione p where p.dataValidita between :dataStart and :dataEnd")
     public List<Film> findAllByDataValiditaBetween(Date dataStart, Date dataEnd);
+
+    public List<Programmazione> findAllByDataValiditaBefore(Date dataValidita);
 }
